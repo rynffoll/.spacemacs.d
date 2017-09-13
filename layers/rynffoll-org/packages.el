@@ -87,16 +87,6 @@
   (org-expiry-insinuate)
 
   (require 'org-protocol)
-  (defadvice org-capture
-      (after org-capture activate)
-    "Advise capture to be the only window when used as a popup"
-    (when (s-contains? "CAPTURE-" (frame-parameter nil 'name))
-      (delete-other-windows)))
-  (defadvice org-capture-finalize
-      (after delete-capture-frame activate)
-    "Advise capture-finalize to close the frame"
-    (when (s-contains? "CAPTURE-" (frame-parameter nil 'name))
-      (delete-frame)))
 
   ;; fontify done checkbox
   (font-lock-add-keywords
