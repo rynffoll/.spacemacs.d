@@ -66,6 +66,7 @@
      evil-commentary
      imenu-list
      command-log
+     search-engine
 
      ;; local
      (rynffoll :variables
