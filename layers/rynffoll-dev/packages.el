@@ -13,8 +13,7 @@
 
 (defun rynffoll-dev/post-init-magit ()
   (setq magit-repository-directories `(,rynffoll-dev/projects-directory)
-        ;; magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
-        ))
+        magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
 
 (defun rynffoll-dev/init-ssh-agency ()
   (use-package ssh-agency))
