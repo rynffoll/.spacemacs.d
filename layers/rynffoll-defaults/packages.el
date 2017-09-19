@@ -10,6 +10,7 @@
     undo-tree
     ;; reverse-im
     yasnippet-snippets
+    evil-goggles
     ))
 
 (defun rynffoll-defaults/post-init-evil ()
@@ -70,3 +71,11 @@
 (defun rynffoll-defaults/init-yasnippet-snippets ()
   (use-package yasnippet-snippets
     :after yasnippet))
+
+(defun rynffoll-defaults/init-evil-goggles ()
+  (use-package evil-goggles
+    :config
+    (setq eevil-goggles-duration 0.100
+          vil-goggles-pulse t)
+    (evil-goggles-mode)
+    (evil-goggles-use-magit-faces)))
