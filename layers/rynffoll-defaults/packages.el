@@ -75,7 +75,7 @@
 (defun rynffoll-defaults/init-evil-goggles ()
   (use-package evil-goggles
     :config
-    (setq eevil-goggles-duration 0.100
-          vil-goggles-pulse t)
+    (setq evil-goggles-duration 0.100
+          evil-goggles-pulse t)
     (evil-goggles-mode)
     (evil-goggles-use-magit-faces)))
