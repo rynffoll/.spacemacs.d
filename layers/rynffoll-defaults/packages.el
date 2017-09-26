@@ -74,6 +74,7 @@
 
 (defun rynffoll-defaults/init-evil-goggles ()
   (use-package evil-goggles
+    :after magit
     :config
     (setq evil-goggles-duration 0.100
           evil-goggles-pulse t)
