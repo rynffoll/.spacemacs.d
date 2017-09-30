@@ -6,6 +6,7 @@
         js2-mode
         (js-mode :location built-in)
         (css-mode :location built-in)
+        log4j-mode
         ))
 
 (defun rynffoll-dev/post-init-projectile ()
@@ -26,3 +27,6 @@
 
 (defun rynffoll-dev/post-init-css-mode ()
   (setq css-indent-offset 2))
+
+(defun rynffoll-dev/init-log4j-mode ()
+  (use-package log4j-mode))
