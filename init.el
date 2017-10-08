@@ -17,6 +17,7 @@
      autohotkey
      nginx
      ivy
+     treemacs
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
