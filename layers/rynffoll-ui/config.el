@@ -7,10 +7,10 @@
       `((solarized-dark
 
          (mode-line :inherit mode-line
-                    :background ,solarized-dark-bg :height 0.95
+                    :background ,solarized-dark-bg ;:height 0.95
                     :box nil :underline nil :overline nil)
          (mode-line-inactive :inherit powerline-inactive1
-                             :background ,solarized-dark-bg-inactive :height 0.95
+                             :background ,solarized-dark-bg-inactive ;:height 0.95
                              :box nil :underline nil :overline nil)
          (spaceline-highlight-face :inherit mode-line :background ,solarized-dark-bg)
          (powerline-active1 :inherit mode-line :background ,solarized-dark-bg)
@@ -23,10 +23,10 @@
         (solarized-light
 
          (mode-line :inherit mode-line
-                    :background ,solarized-light-bg :height 0.95
+                    :background ,solarized-light-bg ;:height 0.95
                     :box nil :underline nil :overline nil)
          (mode-line-inactive :inherit mode-line
-                             :background ,solarized-light-bg-inactive :height 0.95
+                             :background ,solarized-light-bg-inactive ;:height 0.95
                              :box nil :underline nil :overline nil)
          (spaceline-highlight-face :inherit mode-line :background ,solarized-light-bg)
          (powerline-active1 :inherit mode-line :background ,solarized-light-bg)
