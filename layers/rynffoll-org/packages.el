@@ -47,11 +47,12 @@
                         ("org"      . ?o)
                         ("emacs"    . ?E))
 
-        org-default-notes-file (concat rynffoll-org/org-directory "/notes.org")
-        org-default-todo-file (concat rynffoll-org/org-directory "/todo.org")
-        org-default-inbox-file (concat rynffoll-org/org-directory "/inbox.org")
+        org-directory rynffoll-org/org-directory
+        org-default-notes-file (concat org-directory "/notes.org")
+        org-default-todo-file (concat org-directory "/todo.org")
+        org-default-inbox-file (concat org-directory "/inbox.org")
         org-agenda-files `(,org-default-todo-file ,org-default-inbox-file)
-        org-archive-location (concat rynffoll-org/org-directory "/archive.org" "::* From %s")
+        org-archive-location (concat org-directory "/archive.org" "::* From %s")
 
         org-capture-templates `(("t" "Task" entry
                                  (file,org-default-todo-file)
