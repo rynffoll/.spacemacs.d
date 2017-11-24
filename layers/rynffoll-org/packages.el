@@ -11,6 +11,11 @@
         org-log-into-drawer t
         org-tags-column 0
         org-startup-indented t
+        org-pretty-entities t
+        org-hide-emphasis-markers t
+        org-fontify-quote-and-verse-blocks t
+        org-fontify-whole-heading-line t
+        org-src-fontify-natively t
 
         org-edit-src-content-indentation 0
         org-src-window-setup 'current-window

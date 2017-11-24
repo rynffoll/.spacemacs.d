@@ -1,22 +1,31 @@
 (defconst rynffoll-defaults-packages
   '(
     evil
+    evil-cleverparens
+    evil-surround
     ivy
     ivy-rich
     dired
     ranger
-    neotree
+    treemacs
     winum
     undo-tree
-    ;; reverse-im
+    reverse-im
     yasnippet-snippets
-    evil-goggles
     ))
 
 (defun rynffoll-defaults/post-init-evil ()
-  ;; (spacemacs/toggle-evil-cleverparens-on)
-  ;; (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-  )
+  (setq evil-escape-unordered-key-sequence t))
+
+(defun rynffoll-defaults/post-init-evil-cleverparens ()
+  (spacemacs/toggle-evil-cleverparens-on)
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode))
+
+(defun rynffoll-defaults/post-init-evil-surround ()
+  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region))
 
 (defun rynffoll-defaults/post-init-ivy ()
   (setq ivy-format-function 'ivy-format-function-line
@@ -43,14 +52,17 @@
         ranger-width-preview 0.55
         ranger-max-preview-size 10
         ranger-width-parents 0.15
-        ranger-deer-show-details nil
-        ;; ranger-override-dired 'deer
-        )
-  ;; (ranger-override-dired-mode t)
-  )
+        ranger-deer-show-details nil))
 
-(defun rynffoll-defaults/post-init-neotree ()
-  (setq neo-theme 'nerd))
+(defun rynffoll-defaults/post-init-treemacs ()
+  (setq treemacs-winum-number 0
+        treemacs-no-png-images t
+        ;; FIXME treemacs-indentation & treemacs-is-never-other-window doesn't work in this case
+        ;; treemacs-indentation 1
+        ;; treemacs-indentation-string (propertize "⫶ " 'face 'font-lock-comment-face)
+        ;; treemacs-is-never-other-window t
+        treemacs-header-function #'(lambda (current-root)
+                                     (format "%s" (file-name-nondirectory current-root)))))
 
 (defun rynffoll-defaults/post-init-winum ()
   (setq winum-scope 'frame-local))
@@ -61,22 +73,11 @@
   (unless (file-exists-p (concat spacemacs-cache-directory "undo"))
     (make-directory (concat spacemacs-cache-directory "undo"))))
 
-;; reverse-im
-;; (defun rynffoll-defaults/init-reverse-im ()
-;;   (use-package reverse-im
-;;     :config
-;;     (reverse-im-activate "russian-computer"))
-;;   )
+(defun rynffoll-defaults/init-reverse-im ()
+  (use-package reverse-im
+    :config
+    (reverse-im-activate "russian-computer")))
 
 (defun rynffoll-defaults/init-yasnippet-snippets ()
   (use-package yasnippet-snippets
     :after yasnippet))
-
-(defun rynffoll-defaults/init-evil-goggles ()
-  (use-package evil-goggles
-    :after magit
-    :config
-    (setq evil-goggles-duration 0.100
-          evil-goggles-pulse t)
-    (evil-goggles-mode)
-    (evil-goggles-use-magit-faces)))

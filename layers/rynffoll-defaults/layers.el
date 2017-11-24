@@ -2,4 +2,5 @@
  '(
    ivy
    ranger
+   treemacs
    ))

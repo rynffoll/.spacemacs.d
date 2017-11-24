@@ -7,6 +7,7 @@
         (js-mode :location built-in)
         (css-mode :location built-in)
         log4j-mode
+        web-mode
         ))
 
 (defun rynffoll-dev/post-init-projectile ()
@@ -30,3 +31,6 @@
 
 (defun rynffoll-dev/init-log4j-mode ()
   (use-package log4j-mode))
+
+(defun rynffoll-dev/post-init-web-mode ()
+  (add-to-list 'magic-mode-alist '("^import React" . react-mode)))

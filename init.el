@@ -17,7 +17,7 @@
      autohotkey
      nginx
      ivy
-     ;; treemacs
+     treemacs
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
@@ -36,7 +36,9 @@
      git
      (github :packages (not magithub))
      (version-control :variables
-                      version-control-diff-tool 'diff-hl)
+                      version-control-diff-tool 'diff-hl
+                      version-control-diff-side 'left
+                      version-control-global-margin t)
      (shell :variables
             shell-default-shell 'eshell)
      docker
@@ -78,7 +80,7 @@
      )
    dotspacemacs-additional-packages '()
    dotspacemacs-frozen-packages '()
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(vi-tilde-fringe)
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
@@ -90,7 +92,8 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-lists '((recents . 5))
+   dotspacemacs-startup-lists '((recents . 5)
+                                (projects . 5))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'emacs-lisp-mode
    dotspacemacs-themes '(solarized-light
