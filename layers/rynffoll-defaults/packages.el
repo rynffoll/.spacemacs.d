@@ -12,6 +12,9 @@
     undo-tree
     reverse-im
     yasnippet-snippets
+    (fb2-mode :location (recipe
+                         :fetcher github
+                         :repo "spline1986/fb2-mode"))
     ))
 
 (defun rynffoll-defaults/post-init-evil ()
@@ -81,3 +84,6 @@
 (defun rynffoll-defaults/init-yasnippet-snippets ()
   (use-package yasnippet-snippets
     :after yasnippet))
+
+(defun rynffoll-defaults/init-fb2-mode ()
+  (use-package fb2-mode))
