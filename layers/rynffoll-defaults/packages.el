@@ -58,14 +58,14 @@
         ranger-deer-show-details nil))
 
 (defun rynffoll-defaults/post-init-treemacs ()
-  (setq treemacs-winum-number 0
-        treemacs-no-png-images t
-        ;; FIXME treemacs-indentation & treemacs-is-never-other-window doesn't work in this case
-        ;; treemacs-indentation 1
-        ;; treemacs-indentation-string (propertize "⫶ " 'face 'font-lock-comment-face)
-        ;; treemacs-is-never-other-window t
-        treemacs-header-function #'(lambda (current-root)
-                                     (format "%s" (file-name-nondirectory current-root)))))
+  (with-eval-after-load 'treemacs ;; for applying treemacs-{indentation,is-never-other-window}
+    (setq treemacs-winum-number 0
+          treemacs-no-png-images t
+          treemacs-indentation 1
+          treemacs-indentation-string (propertize "| " 'face 'font-lock-comment-face)
+          treemacs-is-never-other-window t
+          treemacs-header-function #'(lambda (current-root)
+                                       (format "%s" (file-name-nondirectory current-root))))))
 
 (defun rynffoll-defaults/post-init-winum ()
   (setq winum-scope 'frame-local))
