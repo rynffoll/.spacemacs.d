@@ -3,3 +3,6 @@
 
 (defvar rynffoll/org-directory "~/Org"
   "Path to directory with org-files")
+
+(setq-default rynffoll/projects-directory "~/Projects"
+              rynffoll/org-directory (is-windows "~/OneDrive/Org" "~/Dropbox/Org"))
