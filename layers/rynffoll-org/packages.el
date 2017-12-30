@@ -6,13 +6,12 @@
 (defun rynffoll-org/post-init-org ()
   (setq org-bullets-bullet-list '("●")
         org-ellipsis "…"
-        org-hide-emphasis-markers nil ; hide markup elements, e.g. * *, / /, _ _
+        org-hide-emphasis-markers t ; hide markup elements, e.g. * *, / /, _ _
         org-list-allow-alphabetical t
         org-log-into-drawer t
         org-tags-column 0
         org-startup-indented t
         org-pretty-entities t
-        org-hide-emphasis-markers t
         org-fontify-quote-and-verse-blocks t
         org-fontify-whole-heading-line t
         org-src-fontify-natively t
@@ -52,7 +51,7 @@
                         ("org"      . ?o)
                         ("emacs"    . ?E))
 
-        org-directory rynffoll-org/org-directory
+        org-directory rynffoll/org-directory
         org-default-notes-file (concat org-directory "/notes.org")
         org-default-todo-file (concat org-directory "/todo.org")
         org-default-inbox-file (concat org-directory "/inbox.org")

@@ -74,9 +74,7 @@
      bm
 
      ;; local
-     (rynffoll :variables
-               rynffoll/projects-directory "~/Projects"
-               rynffoll/org-directory (is-windows "~/OneDrive/Org" "~/Dropbox/Org"))
+     rynffoll
      (notifications :variables
                     notifications-backend (is-windows 'toaster 'libnotify))
      )
