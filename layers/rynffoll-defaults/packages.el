@@ -1,6 +1,5 @@
 (defconst rynffoll-defaults-packages
   '(
-    evil
     evil-cleverparens
     evil-surround
     ivy
@@ -16,9 +15,6 @@
                          :fetcher github
                          :repo "spline1986/fb2-mode"))
     ))
-
-(defun rynffoll-defaults/post-init-evil ()
-  (setq evil-escape-unordered-key-sequence t))
 
 (defun rynffoll-defaults/post-init-evil-cleverparens ()
   (spacemacs/toggle-evil-cleverparens-on)

@@ -70,6 +70,8 @@
      imenu-list
      command-log
      search-engine
+     pdf-tools
+     bm
 
      ;; local
      (rynffoll :variables
