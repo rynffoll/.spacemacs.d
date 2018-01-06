@@ -1,6 +1,5 @@
 (defconst rynffoll-defaults-packages
   '(
-    evil-cleverparens
     evil-surround
     ivy
     ivy-rich
@@ -15,12 +14,6 @@
                          :fetcher github
                          :repo "spline1986/fb2-mode"))
     ))
-
-(defun rynffoll-defaults/post-init-evil-cleverparens ()
-  (spacemacs/toggle-evil-cleverparens-on)
-  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode))
 
 (defun rynffoll-defaults/post-init-evil-surround ()
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
@@ -59,9 +52,7 @@
           treemacs-no-png-images t
           treemacs-indentation 1
           treemacs-indentation-string (propertize "| " 'face 'font-lock-comment-face)
-          treemacs-is-never-other-window t
-          treemacs-header-function #'(lambda (current-root)
-                                       (format "%s" (file-name-nondirectory current-root))))))
+          treemacs-is-never-other-window t)))
 
 (defun rynffoll-defaults/post-init-winum ()
   (setq winum-scope 'frame-local))

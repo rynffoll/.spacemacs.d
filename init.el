@@ -50,6 +50,8 @@
      (java :variables
            java-backend 'meghanada)
      groovy
+     kotlin
+     scala
      (clojure :variables
               clojure-enable-fancify-symbols t)
      javascript
@@ -63,7 +65,6 @@
      react
      colors
      erc
-     evil-cleverparens
      (evil-snipe :variables
                  evil-snipe-enable-alternate-f-and-t-behaviors t)
      evil-commentary
@@ -87,8 +88,10 @@
   (setq-default
    dotspacemacs-elpa-https t
    dotspacemacs-elpa-timeout 5
+   dotspacemacs-use-spacelpa nil
+   dotspacemacs-verify-spacelpa-archives nil
    dotspacemacs-check-for-update nil
-   dotspacemacs-elpa-subdirectory nil
+   dotspacemacs-elpa-subdirectory 'emacs-version
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'official
@@ -118,7 +121,7 @@
    dotspacemacs-default-layout-name "Default"
    dotspacemacs-display-default-layout nil
    dotspacemacs-auto-resume-layouts nil
-   dotspacemacs-auto-generate-layout-names t
+   dotspacemacs-auto-generate-layout-names nil
    dotspacemacs-large-file-size 1
    dotspacemacs-auto-save-file-location 'cache
    dotspacemacs-max-rollback-slots 5
