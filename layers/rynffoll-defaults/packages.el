@@ -2,14 +2,12 @@
   '(
     evil-surround
     ivy
-    ivy-rich
     dired
     ranger
     treemacs
     winum
     undo-tree
     reverse-im
-    yasnippet-snippets
     (fb2-mode :location (recipe
                          :fetcher github
                          :repo "spline1986/fb2-mode"))
@@ -26,13 +24,6 @@
         ivy-initial-inputs-alist nil
         ivy-count-format ""
         ivy-re-builders-alist '((t . ivy--regex-fuzzy))))
-
-(defun rynffoll-defaults/init-ivy-rich ()
-  (use-package ivy-rich
-    :config
-    (setq ivy-rich-switch-buffer-align-virtual-buffer t
-          ivy-rich-abbreviate-paths t)
-    (ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer)))
 
 (defun rynffoll-defaults/post-init-dired ()
   (setq dired-auto-revert-buffer t)
@@ -67,10 +58,6 @@
   (use-package reverse-im
     :config
     (reverse-im-activate "russian-computer")))
-
-(defun rynffoll-defaults/init-yasnippet-snippets ()
-  (use-package yasnippet-snippets
-    :after yasnippet))
 
 (defun rynffoll-defaults/init-fb2-mode ()
   (use-package fb2-mode))

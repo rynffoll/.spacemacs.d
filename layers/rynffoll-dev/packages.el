@@ -1,6 +1,5 @@
 (setq rynffoll-dev-packages
       '(
-        projectile
         magit
         ssh-agency
         js2-mode
@@ -9,9 +8,6 @@
         log4j-mode
         web-mode
         ))
-
-(defun rynffoll-dev/post-init-projectile ()
-  (setq projectile-switch-project-action 'projectile-dired))
 
 (defun rynffoll-dev/post-init-magit ()
   (setq magit-repository-directories `(,rynffoll/projects-directory)

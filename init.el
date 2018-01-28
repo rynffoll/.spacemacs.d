@@ -16,7 +16,8 @@
      csv
      autohotkey
      nginx
-     ivy
+     (ivy :variables
+          ivy-enable-advanced-buffer-information t)
      treemacs
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
