@@ -74,6 +74,7 @@
      search-engine
      pdf-tools
      bm
+     osx
 
      ;; local
      rynffoll
@@ -103,11 +104,13 @@
    dotspacemacs-themes '(solarized-light
                          solarized-dark)
    dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-mode-line-theme '(spacemacs
+                                  :separator nil
+                                  :separator-scale 1.0)
    dotspacemacs-default-font `("Fira Mono Medium"
                                :size ,(is-windows 15 14)
                                :weight normal
-                               :width normal
-                               :powerline-scale 1.0)
+                               :width normal)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-command-key "SPC"
    dotspacemacs-ex-command-key ":"
