@@ -51,7 +51,7 @@
                         ("org"      . ?o)
                         ("emacs"    . ?E))
 
-        org-directory rynffoll/org-directory
+        org-directory "~/Dropbox/Org"
         org-default-notes-file (concat org-directory "/notes.org")
         org-default-todo-file (concat org-directory "/todo.org")
         org-default-inbox-file (concat org-directory "/inbox.org")
