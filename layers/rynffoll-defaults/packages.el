@@ -8,9 +8,6 @@
     winum
     undo-tree
     reverse-im
-    (fb2-mode :location (recipe
-                         :fetcher github
-                         :repo "spline1986/fb2-mode"))
     ))
 
 (defun rynffoll-defaults/post-init-evil-surround ()
@@ -58,6 +55,3 @@
   (use-package reverse-im
     :config
     (reverse-im-activate "russian-computer")))
-
-(defun rynffoll-defaults/init-fb2-mode ()
-  (use-package fb2-mode))

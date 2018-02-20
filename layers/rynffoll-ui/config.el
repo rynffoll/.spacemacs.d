@@ -18,7 +18,8 @@
 
          (powerline-inactive1 :background ,solarized-dark-bg-inactive)
          (powerline-inactive2 :inherit powerline-inactive1
-                              :background ,solarized-dark-bg-inactive))
+                              :background ,solarized-dark-bg-inactive)
+         (org-tag :inherit shadow))
 
         (solarized-light
 
@@ -34,4 +35,5 @@
 
          (powerline-inactive1 :background ,solarized-light-bg-inactive)
          (powerline-inactive2 :inherit powerline-inactive1
-                              :background ,solarized-light-bg-inactive))))
+                              :background ,solarized-light-bg-inactive)
+         (org-tag :inherit shadow))))

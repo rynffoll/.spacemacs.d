@@ -86,19 +86,6 @@
                                           ":PROPERTIES:\n"
                                           ":CREATED: %U\n"
                                           ":END:\n"))))
-  (org-clock-persistence-insinuate) ;; resume org-clock after restaring
 
   (require 'org-expiry)
-  (org-expiry-insinuate)
-
-  (require 'org-protocol)
-
-  ;; fontify done checkbox
-  (font-lock-add-keywords
-   'org-mode
-   `(("^[ \t]*\\(?:[-+*]\\|[0-9]+[).]\\)[ \t]+\\(\\(?:\\[@\\(?:start:\\)?[0-9]+\\][ \t]*\\)?\\[\\(?:X\\|\\([0-9]+\\)/\\2\\)\\][^\n]*\n\\)" 1 'org-headline-done prepend))
-   'append)
-
-  ;; customize theme
-  (custom-set-faces
-   `(org-tag ((t (:inherit shadow))))))
+  (org-expiry-insinuate))
