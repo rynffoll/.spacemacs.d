@@ -1,9 +1,0 @@
-*Notifications layer*
-
-* Table of Contents
-
-* Description
-* Install
-* Configuration
-Use ~notification-backend~ to choose program for display notifications.
-* Key bindings
