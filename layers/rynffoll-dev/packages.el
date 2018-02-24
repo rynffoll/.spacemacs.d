@@ -5,8 +5,9 @@
         js2-mode
         (js-mode :location built-in)
         (css-mode :location built-in)
-        log4j-mode
         web-mode
+        json-mode
+        log4j-mode
         ))
 
 (defun rynffoll-dev/post-init-magit ()
@@ -17,16 +18,21 @@
   (use-package ssh-agency))
 
 (defun rynffoll-dev/post-init-js2-mode ()
-  (setq js2-basic-offset 2))
+  (setq-default js2-basic-offset standard-indent))
 
 (defun rynffoll-dev/post-init-js-mode ()
-  (setq js-indent-level 2))
+  (setq js-indent-level standard-indent))
+
+(defun rynffoll-dev/post-init-json-mode ()
+  (setq json-reformat:indent-width standard-indent)
+  (add-hook 'json-mode-hook #'(lambda ()
+                                (setq js-indent-level standard-indent))))
 
 (defun rynffoll-dev/post-init-css-mode ()
   (setq css-indent-offset 2))
 
-(defun rynffoll-dev/init-log4j-mode ()
-  (use-package log4j-mode))
-
 (defun rynffoll-dev/post-init-web-mode ()
   (add-to-list 'magic-mode-alist '("^import React" . react-mode)))
+
+(defun rynffoll-dev/init-log4j-mode ()
+  (use-package log4j-mode))

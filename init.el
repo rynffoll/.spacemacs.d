@@ -216,7 +216,9 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark
+                         solarized-light
                          solarized-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -297,7 +299,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
-   dotspacemacs-auto-generate-layout-names nil
+   dotspacemacs-auto-generate-layout-names t
 
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
@@ -453,7 +455,7 @@ It should only modify the values of Spacemacs settings."
    ;; %z - mnemonics of buffer, terminal, and keyboard coding systems
    ;; %Z - like %z, but including the end-of-line format
    ;; (default "%I@%S")
-   dotspacemacs-frame-title-format "%I@%S"
+   dotspacemacs-frame-title-format "%b - %U@%S"
 
    ;; Format specification for setting the icon title format
    ;; (default nil - same as frame-title-format)
@@ -476,7 +478,22 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-pretty-docs nil))
 
 (defun dotspacemacs/user-init ()
-  (setq custom-file (expand-file-name "custom.el" user-emacs-directory)))
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+  ;; theme
+  (setq
+   ;; spacemacs
+   spacemacs-theme-org-height nil
+   spacemacs-theme-org-agenda-height nil
+
+   ;; solarized
+   solarized-height-minus-1 1.0
+   solarized-height-plus-1 1.0
+   solarized-height-plus-2 1.0
+   solarized-height-plus-3 1.0
+   solarized-height-plus-4 1.0
+   solarized-use-variable-pitch nil
+   solarized-scale-org-headlines nil))
 
 (defun dotspacemacs/user-config ()
   (load custom-file 'no-error 'no-message))
