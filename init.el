@@ -477,23 +477,17 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-pretty-docs nil))
 
+(defun override-spacemacs-theme-settings ()
+  (setq spacemacs-theme-org-height nil
+        spacemacs-theme-org-agenda-height nil))
+
 (defun dotspacemacs/user-init ()
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-  ;; theme
-  (setq
-   ;; spacemacs
-   spacemacs-theme-org-height nil
-   spacemacs-theme-org-agenda-height nil
-
-   ;; solarized
-   solarized-height-minus-1 1.0
-   solarized-height-plus-1 1.0
-   solarized-height-plus-2 1.0
-   solarized-height-plus-3 1.0
-   solarized-height-plus-4 1.0
-   solarized-use-variable-pitch nil
-   solarized-scale-org-headlines nil))
+  (override-spacemacs-theme-settings)
+  (add-hook 'spacemacs-post-theme-change-hook #'override-spacemacs-theme-settings))
 
 (defun dotspacemacs/user-config ()
-  (load custom-file 'no-error 'no-message))
+  (load custom-file 'no-error 'no-message)
+
+  (override-spacemacs-theme-settings))

@@ -1,6 +1,7 @@
 (defconst rynffoll-ui-packages
   '(
     spaceline
+    solarized-theme
     ))
 
 (defun rynffoll-ui/post-init-spaceline ()
@@ -14,3 +15,12 @@
         spaceline-input-method-p t
         spaceline-org-clock-p t
         spaceline-org-pomodoro-p t))
+
+(defun rynffoll-ui/init-solarized-theme ()
+  (setq solarized-height-minus-1 1.0
+        solarized-height-plus-1 1.0
+        solarized-height-plus-2 1.0
+        solarized-height-plus-3 1.0
+        solarized-height-plus-4 1.0
+        solarized-use-variable-pitch nil
+        solarized-scale-org-headlines nil))
