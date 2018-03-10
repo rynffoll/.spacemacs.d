@@ -82,6 +82,7 @@ This function should only modify configuration layer settings."
      scala
      (clojure :variables
               clojure-enable-fancify-symbols t)
+     go
      javascript
      typescript
      shell-scripts
