@@ -19,8 +19,7 @@
         org-tags-column 0
         org-agenda-tags-column 0
         org-directory "~/Dropbox/Org"
-        org-default-notes-file (concat org-directory "/notes.org")
         org-default-todo-file (concat org-directory "/todo.org")
-        org-default-inbox-file (concat org-directory "/inbox.org")
-        org-agenda-files `(,org-default-todo-file ,org-default-inbox-file)
-        org-archive-location (concat org-directory "/archive.org" "::* From %s")))
+        org-default-notes-file (concat org-directory "/notes.org")
+        org-agenda-files `(,org-default-todo-file)
+        org-archive-location (concat org-directory "/old/archive.org" "::* From %s")))
