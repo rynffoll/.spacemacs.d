@@ -1,5 +1,6 @@
 (defconst rynffoll-defaults-packages
   '(
+    evil
     evil-surround
     ivy
     dired
@@ -9,6 +10,11 @@
     undo-tree
     reverse-im
     ))
+
+(defun rynffoll-defaults/post-init-evil ()
+  ;; hack for working eval-last-sexp in normal state
+  (setq evil-move-beyond-eol t
+        evil-move-cursor-back t)
 
 (defun rynffoll-defaults/post-init-evil-surround ()
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
@@ -35,7 +41,7 @@
         ranger-deer-show-details nil))
 
 (defun rynffoll-defaults/post-init-treemacs ()
-    (setq treemacs-no-png-images t))
+  (setq treemacs-no-png-images t))
 
 (defun rynffoll-defaults/post-init-winum ()
   (setq winum-scope 'frame-local))
