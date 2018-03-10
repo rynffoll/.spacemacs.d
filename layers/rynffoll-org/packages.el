@@ -9,7 +9,7 @@
 
   (setq org-bullets-bullet-list '("●")
         org-ellipsis "…"
-        org-hide-emphasis-markers t ; hide markup elements, e.g. * *, / /, _ _
+        org-hide-emphasis-markers nil ; hide markup elements, e.g. * *, / /, _ _
         org-list-allow-alphabetical t
         org-log-into-drawer t
         org-startup-indented t
