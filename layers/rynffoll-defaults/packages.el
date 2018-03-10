@@ -15,6 +15,10 @@
   ;; hack for working eval-last-sexp in normal state
   (setq evil-move-beyond-eol t
         evil-move-cursor-back t)
+  ;; C-[ in russian layout
+  (define-key evil-normal-state-map (kbd "C-х") 'evil-force-normal-state)
+  (define-key evil-insert-state-map (kbd "C-х") 'evil-normal-state)
+  (define-key evil-visual-state-map (kbd "C-х") 'evil-exit-visual-state))
 
 (defun rynffoll-defaults/post-init-evil-surround ()
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
