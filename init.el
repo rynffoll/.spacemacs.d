@@ -101,10 +101,10 @@ This function should only modify configuration layer settings."
      command-log
      search-engine
      osx
+     parinfer
 
      ;; local
-     rynffoll
-     )
+     rynffoll)
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -119,7 +119,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(auto-yasnippet yasnippet yasnippet-snippets)
+   dotspacemacs-excluded-packages '()
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
