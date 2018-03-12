@@ -491,4 +491,8 @@ It should only modify the values of Spacemacs settings."
 (defun dotspacemacs/user-config ()
   (load custom-file 'no-error 'no-message)
 
+  ;; osx-command-as 'meta - doens't work :(
+  (setq mac-command-modifier 'meta
+        mac-option-modifier 'none)
+
   (override-spacemacs-theme-settings))
