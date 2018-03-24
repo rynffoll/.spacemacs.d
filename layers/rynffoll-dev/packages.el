@@ -8,6 +8,7 @@
         web-mode
         json-mode
         log4j-mode
+        magit-org-todos
         ))
 
 (defun rynffoll-dev/post-init-magit ()
@@ -36,3 +37,8 @@
 
 (defun rynffoll-dev/init-log4j-mode ()
   (use-package log4j-mode))
+
+(defun rynffoll-dev/init-magit-org-todos ()
+  (use-package magit-org-todos
+    :config
+    (magit-org-todos-autoinsert)))

@@ -1,0 +1,12 @@
+* TODO add layer for copy-as-format
+:PROPERTIES:
+:CREATED:  <2018-03-25 Sun 01:48>
+:END:
+* TODO add org-fancy-priorities
+:PROPERTIES:
+:CREATED:  <2018-03-25 Sun 01:50>
+:END:
+* TODO redesign layers
+:PROPERTIES:
+:CREATED:  <2018-03-25 Sun 01:50>
+:END:
