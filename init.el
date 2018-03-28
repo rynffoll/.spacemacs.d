@@ -85,6 +85,7 @@ This function should only modify configuration layer settings."
      go
      javascript
      typescript
+     python
      shell-scripts
      windows-scripts
      sql
