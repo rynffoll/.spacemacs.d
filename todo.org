@@ -2,7 +2,8 @@
 :PROPERTIES:
 :CREATED:  <2018-03-25 Sun 01:48>
 :END:
-* TODO add org-fancy-priorities
+* DONE add org-fancy-priorities
+CLOSED: [2018-03-31 Sat 02:32]
 :PROPERTIES:
 :CREATED:  <2018-03-25 Sun 01:50>
 :END:
