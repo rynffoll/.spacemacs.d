@@ -39,72 +39,6 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     vimscript
-     asciidoc
-     (ansible :variables
-              ansible-auto-encrypt-descrypt t)
-     csv
-     autohotkey
-     nginx
-     (ivy :variables
-          ivy-enable-advanced-buffer-information t)
-     treemacs
-     (auto-completion :variables
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-snippets-in-popup t)
-     better-defaults
-     (org :variables
-          org-want-todo-bindings t)
-     (spell-checking :variables
-                     spell-checking-enable-by-default nil)
-     syntax-checking
-     (ibuffer :variables
-              ibuffer-group-buffers-by 'projects)
-     git
-     (github :packages (not magithub))
-     (version-control :variables
-                      version-control-diff-tool 'diff-hl
-                      version-control-diff-side 'left
-                      version-control-global-margin t)
-     (shell :variables
-            shell-default-shell 'eshell)
-     docker
-     systemd
-     restclient
-     ranger
-     prodigy
-     emacs-lisp
-     (java :variables
-           java-backend 'eclim)
-     groovy
-     kotlin
-     scala
-     (clojure :variables
-              clojure-enable-fancify-symbols t)
-     go
-     javascript
-     typescript
-     python
-     shell-scripts
-     windows-scripts
-     sql
-     html
-     yaml
-     markdown
-     react
-     colors
-     erc
-     (evil-snipe :variables
-                 evil-snipe-enable-alternate-f-and-t-behaviors t)
-     evil-commentary
-     imenu-list
-     command-log
-     search-engine
-     osx
-     parinfer
-
-     ;; local
      rynffoll)
 
    ;; List of additional packages that will be installed without being
@@ -479,17 +413,23 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-pretty-docs nil))
 
-(defun override-spacemacs-theme-settings ()
-  (setq spacemacs-theme-org-height nil
-        spacemacs-theme-org-agenda-height nil))
-
 (defun dotspacemacs/user-init ()
+  "Initialization for user code:
+This function is called immediately after `dotspacemacs/init', before layer
+configuration.
+It is mostly for variables that should be set before packages are loaded.
+If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
   (override-spacemacs-theme-settings)
   (add-hook 'spacemacs-post-theme-change-hook #'override-spacemacs-theme-settings))
 
 (defun dotspacemacs/user-config ()
+  "Configuration for user code:
+This function is called at the very end of Spacemacs startup, after layer
+configuration.
+Put your configuration code here, except for variables that should be set
+before packages are loaded."
   (load custom-file 'no-error 'no-message)
 
   ;; osx-command-as 'meta - doens't work :(
@@ -497,3 +437,7 @@ It should only modify the values of Spacemacs settings."
         mac-option-modifier 'none)
 
   (override-spacemacs-theme-settings))
+
+(defun override-spacemacs-theme-settings ()
+  (setq spacemacs-theme-org-height nil
+        spacemacs-theme-org-agenda-height nil))

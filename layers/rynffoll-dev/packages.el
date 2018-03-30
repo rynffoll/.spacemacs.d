@@ -1,18 +1,16 @@
-(setq rynffoll-dev-packages
-      '(
-        magit
-        ssh-agency
-        js2-mode
-        (js-mode :location built-in)
-        (css-mode :location built-in)
-        web-mode
-        json-mode
-        log4j-mode
-        magit-org-todos
-        ))
+(setq rynffoll-dev-packages '(magit
+                              ssh-agency
+                              js2-mode
+                              (js-mode :location built-in)
+                              (css-mode :location built-in)
+                              web-mode
+                              json-mode
+                              log4j-mode
+                              magit-org-todos
+                              persp-mode))
 
 (defun rynffoll-dev/post-init-magit ()
-  (setq magit-repository-directories `("~/Projects")
+  (setq magit-repository-directories `(projects-directory)
         magit-display-buffer-function #'magit-display-buffer-traditional))
 
 (defun rynffoll-dev/init-ssh-agency ()
@@ -42,3 +40,10 @@
   (use-package magit-org-todos
     :config
     (magit-org-todos-autoinsert)))
+
+(defun rynffoll-dev/post-init-persp-mode ()
+  (spacemacs|define-custom-layout "@Projects"
+    :binding "p"
+    :body
+    (progn
+      (find-file projects-directory))))

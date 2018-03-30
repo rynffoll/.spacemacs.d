@@ -1,4 +1,2 @@
 (configuration-layer/declare-layers
- '(
-   org
-   ))
+ '((org :variables org-want-todo-bindings t)))

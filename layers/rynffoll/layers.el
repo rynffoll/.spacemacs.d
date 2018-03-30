@@ -1,7 +1,8 @@
 (configuration-layer/declare-layers
  '(
-   rynffoll-defaults
+   rynffoll-common
    rynffoll-dev
+   rynffoll-tools
    rynffoll-org
    rynffoll-ui
    ))

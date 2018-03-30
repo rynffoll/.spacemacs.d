@@ -1,8 +1,5 @@
-(defconst rynffoll-ui-packages
-  '(
-    spaceline
-    solarized-theme
-    ))
+(defconst rynffoll-ui-packages '(spaceline
+                                 solarized-theme))
 
 (defun rynffoll-ui/post-init-spaceline ()
   (setq spaceline-minor-modes-p nil

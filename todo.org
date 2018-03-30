@@ -6,7 +6,8 @@
 :PROPERTIES:
 :CREATED:  <2018-03-25 Sun 01:50>
 :END:
-* TODO redesign layers
+* DONE redesign layers
+CLOSED: [2018-03-31 Sat 02:32]
 :PROPERTIES:
 :CREATED:  <2018-03-25 Sun 01:50>
 :END:
