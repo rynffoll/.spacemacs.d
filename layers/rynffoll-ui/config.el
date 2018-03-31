@@ -37,3 +37,7 @@
          (powerline-inactive2 :inherit powerline-inactive1
                               :background ,solarized-light-bg-inactive)
          (org-tag :inherit shadow))))
+
+;; Local Variables:
+;; eval: (when (require 'rainbow-mode nil t) (rainbow-mode 1))
+;; End:
