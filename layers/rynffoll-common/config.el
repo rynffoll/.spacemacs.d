@@ -5,7 +5,9 @@
               make-backup-files nil
               create-lockfiles nil
               backward-delete-char-untabify-method 'hungry
-              calendar-week-start-day 1)
+              calendar-week-start-day 1
+              enable-local-variables :all
+              enable-local-eval t)
 
 ;; input method
 (setq default-input-method "russian-computer")

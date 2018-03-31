@@ -1,4 +1,5 @@
 (defconst rynffoll-org-packages '(org
+                                  org-download
                                   org-fancy-priorities
                                   persp-mode))
 
@@ -23,6 +24,10 @@
         org-default-notes-file (concat org-directory "/notes.org")
         org-agenda-files `(,org-default-todo-file ,org-default-inbox-file)
         org-archive-location (concat org-directory "/old/archive.org" "::* From %s")))
+
+(defun rynffoll-org/post-init-org-download ()
+  (when (spacemacs/system-is-mac)
+    (setq org-download-screenshot-method "screencapture")))
 
 (defun rynffoll-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
