@@ -1,14 +1,13 @@
 (defconst rynffoll-org-packages '(org
+                                  (org-expiry :location built-in)
+                                  org-bullets
+                                  org-pomodoro
                                   org-download
                                   org-fancy-priorities
                                   persp-mode))
 
 (defun rynffoll-org/post-init-org ()
-  (require 'org-expiry)
-  (org-expiry-insinuate)
-
-  (setq org-bullets-bullet-list '("●")
-        org-ellipsis "…"
+  (setq org-ellipsis "…"
         org-hide-emphasis-markers nil ; hide markup elements, e.g. * *, / /, _ _
         org-list-allow-alphabetical t
         org-log-into-drawer t
@@ -25,17 +24,25 @@
         org-agenda-files `(,org-default-todo-file ,org-default-inbox-file)
         org-archive-location (concat org-directory "/old/archive.org" "::* From %s")))
 
+(defun rynffoll-org/post-init-org-expiry ()
+  (org-expiry-insinuate))
+
+(defun rynffoll-org/post-init-org-bullets ()
+  (setq org-bullets-bullet-list '("●")))
+
+(defun rynffoll-org/post-init-org-pomodoro ()
+  (setq org-pomodoro-format "● %s"))
+
 (defun rynffoll-org/post-init-org-download ()
   (when (spacemacs/system-is-mac)
     (setq org-download-screenshot-method "screencapture")))
 
 (defun rynffoll-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
-    :ensure t
     :hook
     (org-mode . org-fancy-priorities-mode)
     :config
-    (setq org-fancy-priorities-list '("⚡" "⬆" "⬇"))))
+    (setq org-fancy-priorities-list '("‼" "↑" "↓"))))
 
 (defun rynffoll-org/post-init-persp-mode ()
   (spacemacs|define-custom-layout "@Org"
