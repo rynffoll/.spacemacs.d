@@ -7,7 +7,8 @@
                               json-mode
                               log4j-mode
                               magit-org-todos
-                              persp-mode))
+                              persp-mode
+                              gitignore-templates))
 
 (defun rynffoll-dev/post-init-magit ()
   (setq magit-repository-directories `(projects-directory)
@@ -47,3 +48,6 @@
     :body
     (progn
       (find-file projects-directory))))
+
+(defun rynffoll-dev/init-gitignore-templates ()
+  (use-package gitignore-templates))

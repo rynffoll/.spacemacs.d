@@ -1,6 +1,6 @@
 (configuration-layer/declare-layers
  '(git
-   (github (comment :packages (not magithub)))
+   github
    (version-control :variables
                     version-control-diff-tool 'diff-hl
                     version-control-diff-side 'left
