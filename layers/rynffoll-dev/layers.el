@@ -5,6 +5,7 @@
                     version-control-diff-tool 'diff-hl
                     version-control-diff-side 'left
                     version-control-global-margin t)
+   lsp
    (auto-completion :variables
                     auto-completion-enable-help-tooltip t
                     auto-completion-enable-sort-by-usage t
@@ -28,9 +29,9 @@
    scala
    (clojure :variables clojure-enable-fancify-symbols t)
    go
-   javascript
-   typescript
-   python
+   (javascript :variables javascript-backend 'lsp)
+   (typescript :variables typescript-backend 'lsp)
+   (python :variables python-backend 'lsp)
    shell-scripts
    windows-scripts
    sql
