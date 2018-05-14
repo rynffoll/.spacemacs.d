@@ -29,6 +29,7 @@
    scala
    (clojure :variables clojure-enable-fancify-symbols t)
    go
+   json
    (javascript :variables javascript-backend 'lsp)
    (typescript :variables typescript-backend 'lsp)
    (python :variables python-backend 'lsp)
