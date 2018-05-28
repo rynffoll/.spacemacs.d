@@ -1,4 +1,2 @@
 (configuration-layer/declare-layers
- '(
-   theming
-   ))
+ '(theming))

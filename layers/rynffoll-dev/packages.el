@@ -12,6 +12,7 @@
 
 (defun rynffoll-dev/post-init-magit ()
   (setq magit-repository-directories `(,user-emacs-directory
+                                       ,dotspacemacs-directory
                                        ,projects-directory)
         magit-display-buffer-function #'magit-display-buffer-fullframe-status-topleft-v1))
 
