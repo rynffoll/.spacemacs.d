@@ -24,7 +24,9 @@
    (clojure :variables clojure-enable-fancify-symbols t)
    ;; go
    json
-   ;; (javascript :variables javascript-backend 'lsp)
+   (javascript :variables
+               javascript-backend 'lsp
+               node-add-modules-path t)
    ;; (typescript :variables typescript-backend 'lsp)
    ;; react
    ;; (python :variables python-backend 'lsp)
