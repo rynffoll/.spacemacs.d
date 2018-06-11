@@ -1,0 +1,25 @@
+#+TITLE: grammarly layer
+
+* Table of Contents
+- [[#description][Description]]
+  - [[#features][Features:]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+This layer adds support for [[https://github.com/mmagnus/emacs-grammarly][emacs-grammarly]].
+
+** Features:
+  - Spell checking via [[https://www.grammarly.com/][Grammarly]]
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =grammarly= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+* Key bindings
+
+| Key Binding | Description                                       |
+|-------------+---------------------------------------------------|
+| ~SPC x G~   | Save region to a tempfile and run Grammarly on it |
+

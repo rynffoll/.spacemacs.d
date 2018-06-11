@@ -4,4 +4,5 @@
    rynffoll-tools
    rynffoll-org
    rynffoll-ui
-   copy-as-format))
+   copy-as-format
+   grammarly))
