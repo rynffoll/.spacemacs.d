@@ -5,7 +5,7 @@
                                      ibuffer
                                      treemacs
                                      winum
-                                     ;; undo-tree
+                                     undo-tree
                                      reverse-im
                                      google-translate))
 
@@ -46,11 +46,11 @@
 (defun rynffoll-common/post-init-winum ()
   (setq winum-scope 'frame-local))
 
-;; (defun rynffoll-common/post-init-undo-tree ()
-;;   (comment (setq undo-tree-auto-save-history t
-;;                  undo-tree-history-directory-alist `(("." . ,(concat spacemacs-cache-directory "undo"))))
-;;            (unless (file-exists-p (concat spacemacs-cache-directory "undo"))
-;;              (make-directory (concat spacemacs-cache-directory "undo")))))
+(defun rynffoll-common/post-init-undo-tree ()
+  (setq undo-tree-auto-save-history t
+        undo-tree-history-directory-alist `(("." . ,(concat spacemacs-cache-directory "undo"))))
+  (unless (file-exists-p (concat spacemacs-cache-directory "undo"))
+    (make-directory (concat spacemacs-cache-directory "undo"))))
 
 (defun rynffoll-common/init-reverse-im ()
   (use-package reverse-im
