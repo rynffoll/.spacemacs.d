@@ -1,6 +1,7 @@
 (defconst rynffoll-ui-packages '(spaceline
                                  solarized-theme
-                                 git-gutter-fringe+))
+                                 git-gutter-fringe+
+                                 flycheck))
 
 (defun rynffoll-ui/post-init-spaceline ()
   (setq spaceline-minor-modes-p nil
@@ -25,12 +26,27 @@
 
 (defun rynffoll-ui/post-init-git-gutter-fringe+ ()
   (with-eval-after-load 'git-gutter-fringe+
+    (require 'fringe-helper)
+    (setq-default fringes-outside-margins t)
     (fringe-helper-define 'git-gutter-fr+-added '(center repeated)
-      "XXX....")
+      "XXX.....")
     (fringe-helper-define 'git-gutter-fr+-deleted 'bottom
-      "X......"
-      "XX....."
-      "XXX...."
-      "XXXX...")
+      "X......."
+      "XX......"
+      "XXX....."
+      "XXXX....")
     (fringe-helper-define 'git-gutter-fr+-modified '(center repeated)
-      "XXX....")))
+      "XXX.....")))
+
+(defun rynffoll-ui/post-init-flycheck ()
+  (with-eval-after-load 'flycheck
+    (require 'fringe-helper)
+    (setq flycheck-indication-mode 'right-fringe)
+    (fringe-helper-define 'flycheck-fringe-bitmap-double-arrow 'center
+      "........"
+      "..XX..XX"
+      ".XX..XX."
+      "XX..XX.."
+      ".XX..XX."
+      "..XX..XX"
+      "........")))
