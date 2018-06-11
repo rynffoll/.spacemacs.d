@@ -11,9 +11,9 @@
                               gitignore-templates))
 
 (defun rynffoll-dev/post-init-magit ()
-  (setq magit-repository-directories `(,user-emacs-directory
-                                       ,dotspacemacs-directory
-                                       ,projects-directory)
+  (setq magit-repository-directories `((,user-emacs-directory . 0)
+                                       (,dotspacemacs-directory . 0)
+                                       (,projects-directory . 1))
         magit-display-buffer-function #'magit-display-buffer-fullframe-status-topleft-v1))
 
 (defun rynffoll-dev/init-ssh-agency ()
