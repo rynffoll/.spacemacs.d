@@ -44,7 +44,10 @@
     (add-hook 'ibuffer-mode-hook #'ibuffer-auto-mode)))
 
 (defun rynffoll-common/post-init-treemacs ()
-  (setq treemacs-no-png-images nil))
+  (setq treemacs-no-png-images t)
+  (with-eval-after-load 'treemacs
+    (set-face-attribute 'treemacs-root-face nil :height 1.1))
+  (add-hook 'treemacs-mode-hook #'hidden-mode-line-mode))
 
 (defun rynffoll-common/post-init-winum ()
   (setq winum-scope 'frame-local))
