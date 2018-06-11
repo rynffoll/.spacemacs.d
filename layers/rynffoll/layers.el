@@ -3,4 +3,5 @@
    rynffoll-dev
    rynffoll-tools
    rynffoll-org
-   rynffoll-ui))
+   rynffoll-ui
+   copy-as-format))

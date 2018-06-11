@@ -1,4 +1,5 @@
-* TODO add layer for copy-as-format
+* DONE add layer for copy-as-format
+CLOSED: [2018-06-11 Mon 23:37]
 :PROPERTIES:
 :CREATED:  <2018-03-25 Sun 01:48>
 :END:
