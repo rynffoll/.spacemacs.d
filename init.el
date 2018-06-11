@@ -430,10 +430,6 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (load custom-file 'no-error 'no-message)
 
-  ;; osx-command-as 'meta - doens't work :(
-  ;; (setq mac-command-modifier 'meta
-  ;;       mac-option-modifier 'none)
-
   (override-spacemacs-theme-settings))
 
 (defun override-spacemacs-theme-settings ()

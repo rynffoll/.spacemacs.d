@@ -18,7 +18,7 @@
    autohotkey
    nginx
    systemd
-   (emacs-lisp :variables emacs-lisp-hide-namespace-prefix t)
+   emacs-lisp
    (java :variables java-backend 'eclim)
    groovy
    (clojure :variables clojure-enable-fancify-symbols t)
