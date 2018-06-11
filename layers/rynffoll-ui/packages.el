@@ -1,5 +1,6 @@
 (defconst rynffoll-ui-packages '(spaceline
-                                 solarized-theme))
+                                 solarized-theme
+                                 git-gutter-fringe+))
 
 (defun rynffoll-ui/post-init-spaceline ()
   (setq spaceline-minor-modes-p nil
@@ -21,3 +22,15 @@
         solarized-height-plus-4 1.0
         solarized-use-variable-pitch nil
         solarized-scale-org-headlines nil))
+
+(defun rynffoll-ui/post-init-git-gutter-fringe+ ()
+  (with-eval-after-load 'git-gutter-fringe+
+    (fringe-helper-define 'git-gutter-fr+-added '(center repeated)
+      "XXX....")
+    (fringe-helper-define 'git-gutter-fr+-deleted 'bottom
+      "X......"
+      "XX....."
+      "XXX...."
+      "XXXX...")
+    (fringe-helper-define 'git-gutter-fr+-modified '(center repeated)
+      "XXX....")))
