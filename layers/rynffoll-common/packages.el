@@ -8,7 +8,8 @@
                                      winum
                                      undo-tree
                                      reverse-im
-                                     google-translate))
+                                     google-translate
+                                     hungry-delete))
 
 (defun rynffoll-common/post-init-evil ()
   ;; hack for working eval-last-sexp in normal state
@@ -65,3 +66,6 @@
 
 (defun rynffoll-common/post-init-google-translate ()
   (setq google-translate-default-target-language "ru"))
+
+(defun rynffoll-common/post-init-hungry-delete ()
+  (global-hungry-delete-mode t))
