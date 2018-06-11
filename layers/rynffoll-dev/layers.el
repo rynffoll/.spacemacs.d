@@ -5,10 +5,12 @@
                     version-control-diff-side 'left)
    lsp
    (auto-completion :variables
-                    auto-completion-enable-help-tooltip t
+                    auto-completion-enable-help-tooltip nil
                     auto-completion-enable-sort-by-usage t
                     auto-completion-enable-snippets-in-popup t)
-   syntax-checking
+   (syntax-checking :variables
+                    syntax-checking-enable-tooltips nil
+                    syntax-checking-use-original-bitmaps t)
    (shell :variables
           shell-default-shell 'eshell
           shell-enable-smart-eshell t)
