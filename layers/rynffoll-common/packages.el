@@ -2,6 +2,7 @@
                                      evil-surround
                                      ivy
                                      dired
+                                     diff-hl
                                      ibuffer
                                      treemacs
                                      winum
@@ -32,8 +33,10 @@
 
 (defun rynffoll-common/post-init-dired ()
   (setq dired-auto-revert-buffer t)
-  (add-hook 'dired-mode-hook #'diff-hl-dired-mode)
   (add-hook 'dired-mode-hook #'dired-hide-details-mode))
+
+(defun rynffoll-common/post-init-diff-hl ()
+  (add-hook 'dired-mode-hook #'diff-hl-dired-mode))
 
 (defun rynffoll-common/post-init-ibuffer ()
   (with-eval-after-load 'ibuffer
