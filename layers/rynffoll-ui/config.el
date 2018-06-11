@@ -36,6 +36,33 @@
 ;;                               :background ,solarized-light-bg-inactive)
 ;;          (org-tag :inherit shadow))))
 
+
+(setq rynffoll-ui/unboxed-modeline-face '((mode-line :inherit mode-line :box nil)
+                                          (mode-line-inactive :inherit mode-line-inactive :box nil))
+      rynffoll-ui/shadow-org-tag-face '((org-tag :inherit shadow))
+      theming-modifications `((spacemacs-light
+                               ,@rynffoll-ui/unboxed-modeline-face
+                               ,@rynffoll-ui/shadow-org-tag-face)
+
+                              (spacemacs-dark
+                               ,@rynffoll-ui/unboxed-modeline-face
+                               ,@rynffoll-ui/shadow-org-tag-face)
+
+                              (solarized-light
+                               ,@rynffoll-ui/unboxed-modeline-face
+                               ,@rynffoll-ui/shadow-org-tag-face)
+
+                              (solarized-dark
+                               ,@rynffoll-ui/unboxed-modeline-face
+                               ,@rynffoll-ui/shadow-org-tag-face)))
+
+(setf (cdr (assq 'continuation fringe-indicator-alist))
+      ;; '(nil nil) ;; no continuation indicators
+      '(nil right-curly-arrow) ;; right indicator only
+      ;; '(left-curly-arrow nil) ;; left indicator only
+      ;; '(left-curly-arrow right-curly-arrow) ;; default
+      )
+
 ;; Local Variables:
 ;; eval: (when (require 'rainbow-mode nil t) (rainbow-mode 1))
 ;; End:
