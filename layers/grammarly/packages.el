@@ -16,6 +16,7 @@
 
 (defun grammarly/init-emacs-grammarly ()
   (use-package emacs-grammarly
+    :defer t
     :init
     (spacemacs/declare-prefix "xG" "Grammarly")
     (spacemacs/set-leader-keys

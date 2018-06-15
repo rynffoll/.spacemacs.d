@@ -21,8 +21,9 @@
   (define-key evil-visual-state-map (kbd "C-х") 'evil-exit-visual-state))
 
 (defun rynffoll-common/post-init-evil-surround ()
-  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region))
+  (with-eval-after-load 'evil-surround
+    (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+    (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)))
 
 (defun rynffoll-common/post-init-ivy ()
   (setq ivy-format-function 'ivy-format-function-line

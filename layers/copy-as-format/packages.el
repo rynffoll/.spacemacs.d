@@ -13,6 +13,7 @@
 
 (defun copy-as-format/init-copy-as-format ()
   (use-package copy-as-format
+    :defer t
     :init
     (spacemacs/declare-prefix "xf" "copy-as-format")
     (spacemacs/set-leader-keys

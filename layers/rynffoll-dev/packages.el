@@ -19,7 +19,7 @@
         magit-display-buffer-function #'magit-display-buffer-fullframe-status-topleft-v1))
 
 (defun rynffoll-dev/init-ssh-agency ()
-  (use-package ssh-agency))
+  (use-package ssh-agency :defer t))
 
 (defun rynffoll-dev/post-init-js2-mode ()
   (setq-default js2-basic-offset standard-indent))
@@ -39,19 +39,27 @@
   (add-to-list 'magic-mode-alist '("^import React" . react-mode)))
 
 (defun rynffoll-dev/init-log4j-mode ()
-  (use-package log4j-mode))
+  (use-package log4j-mode :defer t))
 
 (defun rynffoll-dev/init-magit-todos ()
   (use-package magit-todos
-    :config
-    (magit-todos-mode t)))
+    :defer t
+    :init
+    (spacemacs|add-transient-hook magit-mode-hook
+      (lambda ()
+        (require 'magit-todos)
+        (magit-todos-mode t)))))
 
 (defun rynffoll-dev/post-init-persp-mode ()
   (spacemacs|define-custom-layout "@Projects"
     :binding "p"
-    :body
-    (progn
-      (find-file projects-directory))))
+    :body (find-file projects-directory)))
 
 (defun rynffoll-dev/init-gitignore-templates ()
-  (use-package gitignore-templates))
+  (use-package gitignore-templates
+    :defer t
+    :init
+    (spacemacs/set-leader-keys-for-major-mode 'gitignore-mode
+      "i" 'gitignore-templates-insert)
+    (spacemacs/set-leader-keys
+      "gfi" 'gitignore-templates-new-file)))

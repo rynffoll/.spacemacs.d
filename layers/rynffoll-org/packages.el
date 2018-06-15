@@ -25,7 +25,8 @@
         org-archive-location (concat org-directory "/old/archive.org" "::* From %s")))
 
 (defun rynffoll-org/post-init-org-expiry ()
-  (org-expiry-insinuate))
+  (with-eval-after-load 'org-mode
+    (org-expiry-insinuate)))
 
 (defun rynffoll-org/post-init-org-bullets ()
   (setq org-bullets-bullet-list '("●")))
@@ -39,10 +40,11 @@
 
 (defun rynffoll-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
+    :defer t
+    :init
+    (setq org-fancy-priorities-list '("‼" "↑" "↓"))
     :hook
-    (org-mode . org-fancy-priorities-mode)
-    :config
-    (setq org-fancy-priorities-list '("‼" "↑" "↓"))))
+    (org-mode . org-fancy-priorities-mode)))
 
 (defun rynffoll-org/post-init-persp-mode ()
   (spacemacs|define-custom-layout "@Org"
