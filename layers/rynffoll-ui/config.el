@@ -37,8 +37,11 @@
 ;;          (org-tag :inherit shadow))))
 
 
-(setq rynffoll-ui/unboxed-modeline-face '((mode-line :inherit mode-line :box nil)
-                                          (mode-line-inactive :inherit mode-line-inactive :box nil))
+(setq rynffoll-ui/unboxed-modeline-face '((mode-line
+                                           :inherit mode-line
+                                           :box nil :underline nil :overline nil)
+                                          (mode-line-inactive
+                                           :inherit mode-line-inactive :box nil :underline nil :overline nil))
       rynffoll-ui/shadow-org-tag-face '((org-tag :inherit shadow))
       theming-modifications `((spacemacs-light
                                ,@rynffoll-ui/unboxed-modeline-face

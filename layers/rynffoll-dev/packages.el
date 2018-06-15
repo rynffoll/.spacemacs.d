@@ -6,7 +6,9 @@
                               web-mode
                               json-mode
                               log4j-mode
-                              magit-org-todos
+                              (magit-todos :location (recipe
+                                                      :fetcher github
+                                                      :repo "alphapapa/magit-todos"))
                               persp-mode
                               gitignore-templates))
 
@@ -39,10 +41,10 @@
 (defun rynffoll-dev/init-log4j-mode ()
   (use-package log4j-mode))
 
-(defun rynffoll-dev/init-magit-org-todos ()
-  (use-package magit-org-todos
+(defun rynffoll-dev/init-magit-todos ()
+  (use-package magit-todos
     :config
-    (magit-org-todos-autoinsert)))
+    (magit-todos-mode t)))
 
 (defun rynffoll-dev/post-init-persp-mode ()
   (spacemacs|define-custom-layout "@Projects"
