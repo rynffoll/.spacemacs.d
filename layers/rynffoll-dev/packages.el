@@ -9,8 +9,7 @@
                               (magit-todos :location (recipe
                                                       :fetcher github
                                                       :repo "alphapapa/magit-todos"))
-                              persp-mode
-                              gitignore-templates))
+                              persp-mode))
 
 (defun rynffoll-dev/post-init-magit ()
   (setq magit-repository-directories `((,user-emacs-directory . 0)
@@ -54,12 +53,3 @@
   (spacemacs|define-custom-layout "@Projects"
     :binding "p"
     :body (find-file projects-directory)))
-
-(defun rynffoll-dev/init-gitignore-templates ()
-  (use-package gitignore-templates
-    :defer t
-    :init
-    (spacemacs/set-leader-keys-for-major-mode 'gitignore-mode
-      "i" 'gitignore-templates-insert)
-    (spacemacs/set-leader-keys
-      "gfi" 'gitignore-templates-new-file)))
