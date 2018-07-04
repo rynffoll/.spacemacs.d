@@ -5,4 +5,5 @@
    rynffoll-org
    rynffoll-ui
    copy-as-format
-   grammarly))
+   ;; grammarly
+   ))

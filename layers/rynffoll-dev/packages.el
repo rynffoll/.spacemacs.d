@@ -6,9 +6,9 @@
                               web-mode
                               json-mode
                               log4j-mode
-                              (magit-todos :location (recipe
-                                                      :fetcher github
-                                                      :repo "alphapapa/magit-todos"))
+                              ;; (magit-todos :location (recipe
+                              ;;                         :fetcher github
+                              ;;                         :repo "alphapapa/magit-todos"))
                               persp-mode))
 
 (defun rynffoll-dev/post-init-magit ()
@@ -40,14 +40,14 @@
 (defun rynffoll-dev/init-log4j-mode ()
   (use-package log4j-mode :defer t))
 
-(defun rynffoll-dev/init-magit-todos ()
-  (use-package magit-todos
-    :defer t
-    :init
-    (spacemacs|add-transient-hook magit-mode-hook
-      (lambda ()
-        (require 'magit-todos)
-        (magit-todos-mode t)))))
+;; (defun rynffoll-dev/init-magit-todos ()
+;;   (use-package magit-todos
+;;     :defer t
+;;     :init
+;;     (spacemacs|add-transient-hook magit-mode-hook
+;;       (lambda ()
+;;         (require 'magit-todos)
+;;         (magit-todos-mode t)))))
 
 (defun rynffoll-dev/post-init-persp-mode ()
   (spacemacs|define-custom-layout "@Projects"
