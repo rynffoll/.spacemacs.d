@@ -25,8 +25,7 @@
         org-archive-location (concat org-directory "/old/archive.org" "::* From %s")))
 
 (defun rynffoll-org/post-init-org-expiry ()
-  (with-eval-after-load 'org-mode
-    (org-expiry-insinuate)))
+  (org-expiry-insinuate))
 
 (defun rynffoll-org/post-init-org-bullets ()
   (setq org-bullets-bullet-list '("●")))
