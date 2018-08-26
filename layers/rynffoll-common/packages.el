@@ -1,15 +1,18 @@
-(defconst rynffoll-common-packages '(evil
-                                     evil-surround
-                                     ivy
-                                     dired
-                                     diff-hl
-                                     ibuffer
-                                     treemacs
-                                     winum
-                                     undo-tree
-                                     reverse-im
-                                     google-translate
-                                     hungry-delete))
+(setq rynffoll-common-packages
+      '(
+        evil
+        evil-surround
+        ivy
+        dired
+        diff-hl
+        ibuffer
+        treemacs
+        winum
+        undo-tree
+        reverse-im
+        google-translate
+        hungry-delete
+        ))
 
 (defun rynffoll-common/post-init-evil ()
   ;; hack for working eval-last-sexp in normal state
@@ -27,8 +30,6 @@
 
 (defun rynffoll-common/post-init-ivy ()
   (setq ivy-format-function 'ivy-format-function-line
-        ivy-virtual-abbreviate 'full
-        ivy-use-virtual-buffers t
         ivy-initial-inputs-alist nil
         ivy-count-format ""
         ivy-re-builders-alist '((t . ivy--regex-fuzzy))))
@@ -48,8 +49,9 @@
 (defun rynffoll-common/post-init-treemacs ()
   (setq treemacs-no-png-images t)
   (with-eval-after-load 'treemacs
-    (set-face-attribute 'treemacs-root-face nil :height 1.1))
-  (add-hook 'treemacs-mode-hook #'hidden-mode-line-mode))
+    (set-face-attribute 'treemacs-root-face nil :height 1.1)
+    (add-hook 'treemacs-mode-hook #'hidden-mode-line-mode)
+    (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)))
 
 (defun rynffoll-common/post-init-winum ()
   (setq winum-scope 'frame-local))
@@ -70,3 +72,21 @@
 
 (defun rynffoll-common/post-init-hungry-delete ()
   (global-hungry-delete-mode t))
+
+;; https://github.com/syl20bnr/spacemacs/pull/10905
+(defun osx/init-exec-path-from-shell ()
+  (use-package exec-path-from-shell
+    :if (spacemacs/system-is-mac)
+    :defer nil
+    :config
+    (progn
+      (exec-path-from-shell-initialize)
+      (when (spacemacs/system-is-mac)
+        ;; Use GNU ls as `gls' from `coreutils' if available.  Add `(setq
+        ;; dired-use-ls-dired nil)' to your config to suppress the Dired warning when
+        ;; not using GNU ls.  We must look for `gls' after `exec-path-from-shell' was
+        ;; initialized to make sure that `gls' is in `exec-path'
+        (let ((gls (executable-find "gls")))
+          (when gls
+            (setq insert-directory-program gls
+                  dired-listing-switches "-aBhl --group-directories-first")))))))

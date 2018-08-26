@@ -1,7 +1,10 @@
-(defconst rynffoll-ui-packages '(spaceline
-                                 solarized-theme
-                                 git-gutter-fringe+
-                                 flycheck))
+(setq rynffoll-ui-packages
+      '(
+        spaceline
+        solarized-theme
+        git-gutter-fringe+
+        flycheck
+        ))
 
 (defun rynffoll-ui/post-init-spaceline ()
   (setq spaceline-minor-modes-p nil

@@ -1,10 +1,13 @@
-(defconst rynffoll-org-packages '(org
-                                  (org-expiry :location built-in)
-                                  org-bullets
-                                  org-pomodoro
-                                  org-download
-                                  org-fancy-priorities
-                                  persp-mode))
+(setq rynffoll-org-packages
+      '(
+        org
+        (org-expiry :location built-in)
+        org-bullets
+        org-pomodoro
+        org-download
+        org-fancy-priorities
+        persp-mode
+        ))
 
 (defun rynffoll-org/post-init-org ()
   (setq org-ellipsis "…"

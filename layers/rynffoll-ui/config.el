@@ -37,27 +37,27 @@
 ;;          (org-tag :inherit shadow))))
 
 
-(setq rynffoll-ui/unboxed-modeline-face '((mode-line
+(setq rynffoll-ui/modeline-faces '((mode-line
                                            :inherit mode-line
                                            :box nil :underline nil :overline nil)
                                           (mode-line-inactive
                                            :inherit mode-line-inactive :box nil :underline nil :overline nil))
-      rynffoll-ui/shadow-org-tag-face '((org-tag :inherit shadow))
+      rynffoll-ui/org-mode-faces '((org-tag :inherit shadow))
       theming-modifications `((spacemacs-light
-                               ,@rynffoll-ui/unboxed-modeline-face
-                               ,@rynffoll-ui/shadow-org-tag-face)
+                               ,@rynffoll-ui/modeline-faces
+                               ,@rynffoll-ui/org-mode-faces)
 
                               (spacemacs-dark
-                               ,@rynffoll-ui/unboxed-modeline-face
-                               ,@rynffoll-ui/shadow-org-tag-face)
+                               ,@rynffoll-ui/modeline-faces
+                               ,@rynffoll-ui/org-mode-faces)
 
                               (solarized-light
-                               ,@rynffoll-ui/unboxed-modeline-face
-                               ,@rynffoll-ui/shadow-org-tag-face)
+                               ,@rynffoll-ui/modeline-faces
+                               ,@rynffoll-ui/org-mode-faces)
 
                               (solarized-dark
-                               ,@rynffoll-ui/unboxed-modeline-face
-                               ,@rynffoll-ui/shadow-org-tag-face)))
+                               ,@rynffoll-ui/modeline-faces
+                               ,@rynffoll-ui/org-mode-faces)))
 
 (setf (cdr (assq 'continuation fringe-indicator-alist))
       ;; '(nil nil) ;; no continuation indicators

@@ -1,5 +1,5 @@
 (configuration-layer/declare-layers
- '(docker
+ '(
+   docker
    (restclient :variables restclient-use-org t)
-   ;; ranger
-   prodigy))
+   ))

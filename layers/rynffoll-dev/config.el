@@ -1,4 +1,4 @@
 (defvar projects-directory "~/Projects"
   "Directory for projects")
 
-(setq standard-indent 2)
+;; (setq standard-indent 2)

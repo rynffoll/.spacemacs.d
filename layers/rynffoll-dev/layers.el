@@ -1,5 +1,6 @@
 (configuration-layer/declare-layers
- '(git
+ '(
+   git
    github
    (version-control :variables
                     version-control-diff-side 'left)
@@ -21,20 +22,25 @@
    nginx
    systemd
    emacs-lisp
-   (java :variables java-backend 'eclim)
+   (java :variables java-backend 'lsp)
    groovy
    (clojure :variables clojure-enable-fancify-symbols t)
-   ;; go
+   ;; (go :variables go-backend 'lsp)
    json
+   prettier
    (javascript :variables
                javascript-backend 'lsp
+               javascript-fmt-tool 'prettier
                node-add-modules-path t)
-   ;; (typescript :variables typescript-backend 'lsp)
-   ;; react
+   (typescript :variables
+               typescript-backend 'lsp
+               typescript-fmt-tool 'prettier)
+   react
    ;; (python :variables python-backend 'lsp)
    shell-scripts
    windows-scripts
    (sql :variables sql-capitalize-keywords t)
    html
    yaml
-   markdown))
+   markdown
+   ))
