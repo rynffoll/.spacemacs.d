@@ -9,6 +9,7 @@
         log4j-mode
         magit-todos
         persp-mode
+        cider
         ))
 
 (defun rynffoll-dev/post-init-magit ()
@@ -50,3 +51,11 @@
   (spacemacs|define-custom-layout "@Projects"
     :binding "p"
     :body (find-file projects-directory)))
+
+(defun rynffoll-dev/post-init-cider ()
+  (unless evil-move-beyond-eol
+    (advice-add 'cider-eval-last-sexp :around 'evil-collection-cider-last-sexp)
+    (advice-add 'cider-eval-last-sexp-and-replace :around 'evil-collection-cider-last-sexp)
+    (advice-add 'cider-eval-last-sexp-to-repl :around 'evil-collection-cider-last-sexp)
+    (with-eval-after-load 'cider-eval-sexp-fu
+      (advice-add 'cider-esf--bounds-of-last-sexp :around 'evil-collection-cider-last-sexp))))
